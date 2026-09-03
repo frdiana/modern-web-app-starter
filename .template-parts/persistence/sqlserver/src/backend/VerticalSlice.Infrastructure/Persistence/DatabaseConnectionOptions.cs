@@ -1,0 +1,3 @@
+namespace VerticalSlice.Infrastructure.Persistence;
+
+internal sealed class DatabaseConnectionOptions;

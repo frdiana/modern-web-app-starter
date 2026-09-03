@@ -1,0 +1,149 @@
+{
+  "$schema": "https://json.schemastore.org/template",
+  "author": "frdiana",
+  "classifications": [
+    "Web",
+    "ASP.NET Core",
+    "Aspire",
+    "Vertical Slice"
+  ],
+  "identity": "Frdiana.VerticalSlice.Template",
+  "name": "Frdiana Vertical Slice Aspire Application",
+  "shortName": "vertical-slice-app",
+  "sourceName": "VerticalSlice",
+  "defaultName": "MyApplication",
+  "preferNameDirectory": true,
+  "description": "A layered .NET 10 Aspire application with one-file Minimal API vertical slices.",
+  "tags": {
+    "language": "C#",
+    "type": "solution"
+  },
+  "guids": [
+    "2f681e18-54bc-4c2f-8a99-c483ea026cce"
+  ],
+  "symbols": {
+    "auth": {
+      "type": "parameter",
+      "datatype": "choice",
+      "defaultValue": "none",
+      "description": "Authentication mode for the SPA and API.",
+      "choices": [
+        {
+          "choice": "none",
+          "description": "No authentication."
+        },
+        {
+          "choice": "entra",
+          "description": "Microsoft Entra ID SPA authentication with MSAL authorization code flow and PKCE."
+        }
+      ]
+    },
+    "persistence": {
+      "type": "parameter",
+      "datatype": "choice",
+      "defaultValue": "none",
+      "description": "Persistence provider for the example greeting repository.",
+      "choices": [
+        {
+          "choice": "none",
+          "description": "In-memory repository with no external resource."
+        },
+        {
+          "choice": "cosmos",
+          "description": "Azure Cosmos DB with the local Aspire emulator."
+        },
+        {
+          "choice": "sqlserver",
+          "description": "SQL Server with Dapper and an Aspire container."
+        },
+        {
+          "choice": "postgres",
+          "description": "PostgreSQL with Dapper and an Aspire container."
+        }
+      ]
+    },
+    "EntraAuth": {
+      "type": "computed",
+      "value": "(auth == \"entra\")"
+    },
+    "ExternalPersistence": {
+      "type": "computed",
+      "value": "(persistence != \"none\")"
+    }
+  },
+  "sources": [
+    {
+      "exclude": [
+        ".git/**",
+        ".vs/**",
+        ".template.config/**",
+        "**/[Bb]in/**",
+        "**/[Oo]bj/**",
+        "**/dist/**",
+        "**/node_modules/**",
+        ".template-parts/**",
+        "README.md",
+        "template-test-results/**"
+      ],
+      "copyOnly": [
+        ".github/**"
+      ],
+      "rename": {
+        "PROJECT_README.md": "README.md"
+      },
+      "modifiers": [
+        {
+          "condition": "EntraAuth",
+          "exclude": [
+            "src/backend/VerticalSlice.AppHost/AuthenticationExtensions.cs",
+            "src/backend/VerticalSlice.Api/Authentication.props",
+            "src/backend/VerticalSlice.Api/Authentication/**",
+            "src/backend/VerticalSlice.Api/appsettings.json",
+            "src/backend/tests/VerticalSlice.IntegrationTests/*.cs",
+            "src/frontend/package.json",
+            "src/frontend/package-lock.json",
+            "src/frontend/src/auth/**"
+          ]
+        },
+        {
+          "condition": "ExternalPersistence",
+          "exclude": [
+            "src/backend/VerticalSlice.AppHost/Persistence.props",
+            "src/backend/VerticalSlice.AppHost/PersistenceExtensions.cs",
+            "src/backend/VerticalSlice.Infrastructure/Persistence.props",
+            "src/backend/VerticalSlice.Infrastructure/Persistence/**"
+          ]
+        }
+      ]
+    },
+    {
+      "condition": "EntraAuth",
+      "source": ".template-parts/auth/entra",
+      "target": "./",
+      "exclude": [
+        "**/node_modules/**",
+        "src/frontend/src/tsconfig.json"
+      ]
+    },
+    {
+      "condition": "(persistence == \"cosmos\")",
+      "source": ".template-parts/persistence/cosmos",
+      "target": "./"
+    },
+    {
+      "condition": "(persistence == \"sqlserver\")",
+      "source": ".template-parts/persistence/sqlserver",
+      "target": "./"
+    },
+    {
+      "condition": "(persistence == \"postgres\")",
+      "source": ".template-parts/persistence/postgres",
+      "target": "./"
+    }
+  ],
+  "primaryOutputs": [
+    {
+      "path": "VerticalSlice.slnx"
+    }
+  ]
+}
