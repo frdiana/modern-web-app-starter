@@ -29,6 +29,26 @@ npm install
 npm run build
 ```
 
+## Develop With The Light Spec Workflow
+
+Use `Modern Web App Architect` as the single user-facing Copilot agent. It turns
+project ideas into a project spec and roadmap, prepares feature specs for
+approval, dispatches implementation to backend and React specialists, and runs
+an independent assessment before marking work validated.
+
+```text
+/project-discover idea=...
+/feature-spec featureId=next feature=...
+/feature-implement featureId=F-001
+/feature-assess featureId=F-001
+/roadmap-status
+```
+
+The versioned artifacts under `.specs` show what is planned, implemented,
+validated, blocked, or deferred. Read the
+[agentic development workflow](docs/development-workflow.md) for all agents,
+prompts, status transitions, and a complete example.
+
 ## Run
 
 ```powershell

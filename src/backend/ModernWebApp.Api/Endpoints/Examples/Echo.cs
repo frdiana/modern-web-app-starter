@@ -1,8 +1,8 @@
 using FluentValidation;
 using Microsoft.AspNetCore.Http.HttpResults;
 using Microsoft.Extensions.Options;
-using ModernWebApp.Api.Authentication;
 using ModernWebApp.Api.Configuration;
+using ModernWebApp.Api.Extensions;
 using ModernWebApp.Api.Features;
 using ModernWebApp.Api.Filters;
 using ModernWebApp.Domain;

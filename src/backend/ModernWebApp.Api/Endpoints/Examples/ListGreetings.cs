@@ -1,5 +1,5 @@
 using Microsoft.AspNetCore.Http.HttpResults;
-using ModernWebApp.Api.Authentication;
+using ModernWebApp.Api.Extensions;
 using ModernWebApp.Api.Features;
 using ModernWebApp.Api.Filters;
 using ModernWebApp.Domain;

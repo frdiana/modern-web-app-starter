@@ -96,6 +96,25 @@ Use `aspire wait frontend --non-interactive` before browser automation. The Home
 route calls `GET /api/examples/echo?message=Hello+World` through the Vite proxy.
 The About route demonstrates client-side navigation.
 
+## Develop With The Light Spec Workflow
+
+Generated projects include a project-local Copilot workflow for moving from an
+application idea to tracked, tested features. Select `Modern Web App Architect`
+as the user-facing agent, or use the project prompts:
+
+```text
+/project-discover idea=...
+/feature-spec featureId=next feature=...
+/feature-implement featureId=F-001
+/feature-assess featureId=F-001
+/roadmap-status
+```
+
+Project context, feature progress, implementation notes, and validation evidence
+are stored under `.specs` and remain versioned with the code. See the
+[agentic development workflow](docs/development-workflow.md) for the complete
+agent catalog, prompt reference, lifecycle, and worked example.
+
 ## Entra Setup
 
 The `entra` option uses Authorization Code Flow with PKCE through MSAL. Create

@@ -1,5 +1,4 @@
 using System.Text.Json.Serialization;
-using ModernWebApp.Api.Authentication;
 using ModernWebApp.Api.Configuration;
 using ModernWebApp.Api.Endpoints;
 using ModernWebApp.Api.Extensions;
