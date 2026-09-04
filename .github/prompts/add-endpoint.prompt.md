@@ -1,7 +1,7 @@
 ---
 name: add-endpoint
-description: "Add and test a vertical slice API endpoint - Brought to you by frdiana/verticalslice.template"
-agent: "Vertical Slice Architect"
+description: "Add and test a vertical slice API endpoint - Brought to you by frdiana/modern-web-app-starter"
+agent: "Modern Web App Architect"
 argument-hint: "resource=... operation=... route=... behavior=..."
 ---
 
@@ -17,8 +17,8 @@ argument-hint: "resource=... operation=... route=... behavior=..."
 
 ## Requirements
 
-Implement the endpoint through the complete Vertical Slice Architect workflow.
+Implement the endpoint through the complete Modern Web App Architect workflow.
 Preserve project boundaries, create meaningful tests, build the solution, and
 report any contract decision that could not be inferred from existing code.
 
-> Brought to you by frdiana/verticalslice.template
+> Brought to you by frdiana/modern-web-app-starter

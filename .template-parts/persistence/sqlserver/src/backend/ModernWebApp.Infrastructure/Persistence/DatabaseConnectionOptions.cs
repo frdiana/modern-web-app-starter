@@ -1,0 +1,3 @@
+namespace ModernWebApp.Infrastructure.Persistence;
+
+internal sealed class DatabaseConnectionOptions;

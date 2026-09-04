@@ -1,5 +1,5 @@
 ---
-title: VerticalSlice
+title: ModernWebApp
 description: Aspire-hosted .NET application using one-file Minimal API vertical slices
 ---
 
@@ -7,11 +7,11 @@ description: Aspire-hosted .NET application using one-file Minimal API vertical 
 
 This solution contains:
 
-* `src/backend/VerticalSlice.Domain` for business types and interfaces
-* `src/backend/VerticalSlice.Infrastructure` for external system implementations
-* `src/backend/VerticalSlice.Api` for Minimal API vertical slices and composition
-* `src/backend/VerticalSlice.AppHost` for the Aspire resource graph
-* `src/backend/VerticalSlice.ServiceDefaults` for observability, health checks, resilience,
+* `src/backend/ModernWebApp.Domain` for business types and interfaces
+* `src/backend/ModernWebApp.Infrastructure` for external system implementations
+* `src/backend/ModernWebApp.Api` for Minimal API vertical slices and composition
+* `src/backend/ModernWebApp.AppHost` for the Aspire resource graph
+* `src/backend/ModernWebApp.ServiceDefaults` for observability, health checks, resilience,
   and service discovery
 * Unit and HTTP integration test projects under `src/backend/tests`
 * Vite and React frontend with Home and About routes
@@ -22,8 +22,8 @@ This solution contains:
 ## Build And Test
 
 ```powershell
-dotnet build VerticalSlice.slnx
-dotnet test VerticalSlice.slnx --no-build
+dotnet build ModernWebApp.slnx
+dotnet test ModernWebApp.slnx --no-build
 cd src\frontend
 npm install
 npm run build
@@ -32,7 +32,7 @@ npm run build
 ## Run
 
 ```powershell
-aspire start --apphost src\backend\VerticalSlice.AppHost\VerticalSlice.AppHost.csproj
+aspire start --apphost src\backend\ModernWebApp.AppHost\ModernWebApp.AppHost.csproj
 ```
 
 Wait for the frontend before using browser automation:
@@ -76,9 +76,9 @@ limited to the Aspire-provided endpoint so isolated dynamic ports are supported.
 
 ## Add A Vertical Slice
 
-Use the `Vertical Slice Architect` project agent or invoke `/add-endpoint` in
+Use the `Modern Web App Architect` project agent or invoke `/add-endpoint` in
 GitHub Copilot Chat. New API operations belong under
-`src/backend/VerticalSlice.Api/Endpoints/<Resource>` with one operation per file.
+`src/backend/ModernWebApp.Api/Endpoints/<Resource>` with one operation per file.
 
 Replace the `Examples/Echo` slice when the first real capability is added.
 

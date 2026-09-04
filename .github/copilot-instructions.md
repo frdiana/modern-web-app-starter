@@ -1,5 +1,5 @@
 ---
-title: Vertical Slice Project Instructions
+title: Modern Web App Project Instructions
 description: Repository-wide architecture and validation conventions for generated applications
 ---
 

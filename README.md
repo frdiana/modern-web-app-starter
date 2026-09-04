@@ -1,5 +1,5 @@
 ---
-title: Frdiana Vertical Slice Template
+title: Modern Web App Starter
 description: Local dotnet new template for an Aspire-hosted vertical slice application
 ---
 
@@ -33,8 +33,8 @@ Clone the repository to a stable local path. The installation records this path,
 so do not delete it while the template is installed.
 
 ```powershell
-git clone https://github.com/frdiana/VerticalSlice.Template.git C:\templates\VerticalSlice.Template
-dotnet new install C:\templates\VerticalSlice.Template
+git clone https://github.com/frdiana/modern-web-app-starter.git C:\templates\modern-web-app-starter
+dotnet new install C:\templates\modern-web-app-starter
 ```
 
 When working directly from this repository, install the current folder:
@@ -50,14 +50,14 @@ No NuGet publication is required.
 Choose a valid C# root namespace. Dotted names are supported.
 
 ```powershell
-dotnet new vertical-slice-app `
+dotnet new modern-web-app `
   --name Acme.Orders `
   --output C:\source\Acme.Orders `
   --auth none `
   --persistence none
 ```
 
-The command replaces `VerticalSlice` in solution names, project names,
+The command replaces `ModernWebApp` in solution names, project names,
 namespaces, project references, and documentation.
 
 ## Template Options
@@ -70,9 +70,9 @@ namespaces, project references, and documentation.
 Examples:
 
 ```powershell
-dotnet new vertical-slice-app -n Acme.Secure --auth entra
-dotnet new vertical-slice-app -n Acme.Documents --persistence cosmos
-dotnet new vertical-slice-app -n Acme.Orders --auth entra --persistence postgres
+dotnet new modern-web-app -n Acme.Secure --auth entra
+dotnet new modern-web-app -n Acme.Documents --persistence cosmos
+dotnet new modern-web-app -n Acme.Orders --auth entra --persistence postgres
 ```
 
 The `none` persistence option uses a process-local in-memory repository. Other
@@ -158,8 +158,8 @@ behind another ingress, add only its trusted IP addresses to
 ## Update The Installed Template
 
 ```powershell
-git -C C:\templates\VerticalSlice.Template pull
-dotnet new install C:\templates\VerticalSlice.Template --force
+git -C C:\templates\modern-web-app-starter pull
+dotnet new install C:\templates\modern-web-app-starter --force
 ```
 
 Updating the installed template affects only projects created afterward.
@@ -169,12 +169,12 @@ Updating the installed template affects only projects created afterward.
 Use the same source path used during installation:
 
 ```powershell
-dotnet new uninstall C:\templates\VerticalSlice.Template
+dotnet new uninstall C:\templates\modern-web-app-starter
 ```
 
 ## Maintain The Template
 
-Keep `VerticalSlice` as the source token in code, file names, and the template
+Keep `ModernWebApp` as the source token in code, file names, and the template
 manifest. Test every change by installing from this folder and generating a
 project with an unrelated dotted name.
 

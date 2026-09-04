@@ -7,10 +7,10 @@
     "Aspire",
     "Vertical Slice"
   ],
-  "identity": "Frdiana.VerticalSlice.Template",
-  "name": "Frdiana Vertical Slice Aspire Application",
-  "shortName": "vertical-slice-app",
-  "sourceName": "VerticalSlice",
+  "identity": "Frdiana.ModernWebAppStarter",
+  "name": "Modern Web App Starter",
+  "shortName": "modern-web-app",
+  "sourceName": "ModernWebApp",
   "defaultName": "MyApplication",
   "preferNameDirectory": true,
   "description": "A layered .NET 10 Aspire application with one-file Minimal API vertical slices.",
@@ -95,11 +95,11 @@
         {
           "condition": "EntraAuth",
           "exclude": [
-            "src/backend/VerticalSlice.AppHost/AuthenticationExtensions.cs",
-            "src/backend/VerticalSlice.Api/Authentication.props",
-            "src/backend/VerticalSlice.Api/Authentication/**",
-            "src/backend/VerticalSlice.Api/appsettings.json",
-            "src/backend/tests/VerticalSlice.IntegrationTests/*.cs",
+            "src/backend/ModernWebApp.AppHost/AuthenticationExtensions.cs",
+            "src/backend/ModernWebApp.Api/Authentication.props",
+            "src/backend/ModernWebApp.Api/Authentication/**",
+            "src/backend/ModernWebApp.Api/appsettings.json",
+            "src/backend/tests/ModernWebApp.IntegrationTests/*.cs",
             "src/frontend/package.json",
             "src/frontend/package-lock.json",
             "src/frontend/src/auth/**"
@@ -108,10 +108,10 @@
         {
           "condition": "ExternalPersistence",
           "exclude": [
-            "src/backend/VerticalSlice.AppHost/Persistence.props",
-            "src/backend/VerticalSlice.AppHost/PersistenceExtensions.cs",
-            "src/backend/VerticalSlice.Infrastructure/Persistence.props",
-            "src/backend/VerticalSlice.Infrastructure/Persistence/**"
+            "src/backend/ModernWebApp.AppHost/Persistence.props",
+            "src/backend/ModernWebApp.AppHost/PersistenceExtensions.cs",
+            "src/backend/ModernWebApp.Infrastructure/Persistence.props",
+            "src/backend/ModernWebApp.Infrastructure/Persistence/**"
           ]
         }
       ]
@@ -143,7 +143,7 @@
   ],
   "primaryOutputs": [
     {
-      "path": "VerticalSlice.slnx"
+      "path": "ModernWebApp.slnx"
     }
   ]
 }

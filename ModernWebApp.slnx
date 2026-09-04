@@ -1,0 +1,13 @@
+<Solution>
+  <Folder Name="/src/backend/">
+    <Project Path="src/backend/ModernWebApp.Api/ModernWebApp.Api.csproj" />
+    <Project Path="src/backend/ModernWebApp.AppHost/ModernWebApp.AppHost.csproj" />
+    <Project Path="src/backend/ModernWebApp.Domain/ModernWebApp.Domain.csproj" />
+    <Project Path="src/backend/ModernWebApp.Infrastructure/ModernWebApp.Infrastructure.csproj" />
+    <Project Path="src/backend/ModernWebApp.ServiceDefaults/ModernWebApp.ServiceDefaults.csproj" />
+  </Folder>
+  <Folder Name="/src/backend/tests/">
+    <Project Path="src/backend/tests/ModernWebApp.IntegrationTests/ModernWebApp.IntegrationTests.csproj" />
+    <Project Path="src/backend/tests/ModernWebApp.UnitTests/ModernWebApp.UnitTests.csproj" />
+  </Folder>
+</Solution>

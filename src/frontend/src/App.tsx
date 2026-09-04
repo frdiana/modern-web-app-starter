@@ -10,9 +10,9 @@ export default function App() {
   return (
     <div className="app-shell">
       <header className="site-header">
-        <NavLink className="brand" to="/" aria-label="VerticalSlice home">
+        <NavLink className="brand" to="/" aria-label="ModernWebApp home">
           <img src="/mark.svg" alt="" />
-          <span>VerticalSlice</span>
+          <span>ModernWebApp</span>
         </NavLink>
 
         <nav aria-label="Main navigation">
