@@ -176,12 +176,33 @@ behind another ingress, add only its trusted IP addresses to
 
 ## Update The Installed Template
 
+Pull the latest repository changes, then reinstall the template from the same
+source path using `--force`:
+
 ```powershell
 git -C C:\templates\modern-web-app-starter pull
 dotnet new install C:\templates\modern-web-app-starter --force
 ```
 
-Updating the installed template affects only projects created afterward.
+When the terminal is already inside the template repository, use:
+
+```powershell
+git pull
+dotnet new install . --force
+```
+
+Verify that the updated template is available:
+
+```powershell
+dotnet new list modern-web-app
+```
+
+The installation remains linked to its source directory. Keep that directory
+available after installation and repeat these commands whenever the repository
+changes.
+
+Updating the installed template affects only projects created afterward. It
+does not modify or migrate projects previously generated with `dotnet new`.
 
 ## Uninstall
 

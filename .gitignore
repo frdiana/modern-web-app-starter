@@ -4,7 +4,10 @@
 **/node_modules/
 .aspire/
 .vs/
-.vscode/
+.vscode/*
+!.vscode/launch.json
+!.vscode/tasks.json
+!.vscode/open-debug-browser.ps1
 TestResults/
 *.user
 *.suo

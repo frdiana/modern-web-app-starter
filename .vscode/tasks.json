@@ -1,0 +1,42 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "frontend:open-debug-browser",
+      "type": "process",
+      "command": "pwsh",
+      "args": [
+        "-NoProfile",
+        "-NonInteractive",
+        "-File",
+        "${workspaceFolder}\\.vscode\\open-debug-browser.ps1"
+      ],
+      "options": {
+        "cwd": "${workspaceFolder}"
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "aspire:run",
+      "type": "process",
+      "command": "aspire",
+      "args": [
+        "run"
+      ],
+      "options": {
+        "cwd": "${workspaceFolder}\\src\\backend\\ModernWebApp.AppHost"
+      },
+      "isBackground": true,
+      "problemMatcher": {
+        "pattern": {
+          "regexp": "^$"
+        },
+        "background": {
+          "activeOnStart": true,
+          "beginsPattern": ".",
+          "endsPattern": "Login to the dashboard at|Distributed application started"
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,42 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "type": "aspire",
+      "request": "launch",
+      "name": "Aspire: Launch AppHost",
+      "program": "${workspaceFolder}\\src\\backend\\ModernWebApp.AppHost",
+      "debuggers": {
+        "project": {
+          "console": "integratedTerminal"
+        },
+        "node": {
+          "skipFiles": [
+            "<node_internals>/**"
+          ]
+        }
+      }
+    },
+    {
+      "type": "msedge",
+      "request": "attach",
+      "name": "Frontend: Attach Edge",
+      "preLaunchTask": "frontend:open-debug-browser",
+      "address": "127.0.0.1",
+      "port": 9222,
+      "timeout": 60000,
+      "urlFilter": "http://localhost:5173/*",
+      "webRoot": "${workspaceFolder}\\src\\frontend"
+    }
+  ],
+  "compounds": [
+    {
+      "name": "Aspire + Frontend",
+      "configurations": [
+        "Aspire: Launch AppHost",
+        "Frontend: Attach Edge"
+      ],
+      "stopAll": true
+    }
+  ]
+}

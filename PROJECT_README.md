@@ -74,6 +74,31 @@ POST /api/examples/greetings
 GET /api/examples/greetings
 ```
 
+## Debug In VS Code
+
+On Windows, install PowerShell 7 (`pwsh`), Microsoft Edge, the Aspire CLI,
+and the VS Code Aspire extension (`microsoft-aspire.aspire-vscode`) with its
+C# debugging dependencies. Install frontend dependencies with `npm install`
+from `src\frontend` before the first launch.
+
+Open Run and Debug, select `Aspire + Frontend`, and press F5. Aspire starts
+the AppHost, API, and Vite; the browser task waits for the frontend, then opens
+a separate Edge profile and attaches the JavaScript debugger. Set breakpoints
+in API C# code and frontend TypeScript or TSX files.
+
+The frontend uses <http://localhost:5173/> and Edge uses debug port `9222`.
+Keep both ports available. Shift+F5 stops both debug sessions; close the
+dedicated Edge window when finished.
+
+`Aspire: Launch AppHost` starts only the Aspire debug session.
+`Frontend: Attach Edge` requires an already running AppHost.
+The `aspire:run` task is an alternative foreground run without a debugger;
+do not run it alongside the Aspire launch configuration.
+
+The configurations live in [launch.json](.vscode/launch.json) and
+[tasks.json](.vscode/tasks.json). The browser startup logic is in
+[open-debug-browser.ps1](.vscode/open-debug-browser.ps1).
+
 ## Configuration
 
 `Application`, `RateLimiting`, and `FeatureManagement` settings live in API
